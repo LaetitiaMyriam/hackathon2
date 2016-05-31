@@ -2,7 +2,7 @@ body {
   margin: 0;
   background-color: #ddd;
 }
-
+​
 nav li {
     display: inline-block;
 }
@@ -12,16 +12,16 @@ nav {
     width: 100%;
     top: 0;
 }
-
+​
 ul {
   margin: 0;
   text-align: center;
 }
-
+​
 li {
   display: inline-block;
 }
-
+​
 li a {
   line-height: 50px;
   text-decoration: none;
@@ -31,9 +31,9 @@ li a {
   text-transform: uppercase;
   font-weight: bold;
   padding: 0 18px;
-
+​
 }
-
+​
 nav li a {
     line-height: 50px;
     text-decoration: none;
@@ -44,8 +44,19 @@ nav li a {
     font-weight: bold;    
     padding: 0 18px;
 }
-
+​
 nav ul {
     margin: 0;
     text-align: center;
+}
+p {
+   line-height: 50px;
+  text-decoration: none;
+  color: black;
+  font-family: 'Open Sans';
+  font-size: 72px;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0 18px;
+  text-align: center;
 }
