@@ -8,6 +8,7 @@ var passport = require('passport');
 require('../config/passport');
 
 var User = require('../models/Users');
+// var Artwork = require('../models/Artworks');
 
 
 router.get('/users', function(req, res, next) {
@@ -55,6 +56,14 @@ router.post('/login', function(req, res, next){
   })(req, res, next);
 });
 
+
+router.post('/users', function(req, res, next) {
+
+  var curUser = User.findById(req.body.id);
+
+  console.log(req.body.id);
+  // res.send(req.body);
+})
 
 
 module.exports = router;

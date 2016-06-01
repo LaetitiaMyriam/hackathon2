@@ -1,11 +1,16 @@
- var app = angular.module('finalproject', ['ui.router']);
+var app = angular.module('finalproject', ['ui.router']);
 
 app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: '/templates/home.html'
-      // controller: 'MainCtrl'
+      templateUrl: '/templates/home.html',
+      controller: 'MainCtrl'
+      resolve: {
+        usersPromise: ['users', function(users){
+          return users.getAll();
+        }]
+      }
     })
     .state('login', {
       url: '/login',
@@ -30,8 +35,13 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
     .state('profile', {
       url: '/profile',
       templateUrl: '/templates/userProfile.html',
-      controller: 'UserProfCtrl'
+      controller: 'UserProfCtrl',
+      resolve: {
+        usersPromise: ['users', function(users){
+          return users.getAll();
+        }]
+      }
     })
 
-  $urlRouterProvider.otherwise('home');
+  // $urlRouterProvider.otherwise('home');
 }]);
