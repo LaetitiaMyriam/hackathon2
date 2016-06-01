@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var ArtworkSchema = new mongoose.Schema({
   name: String,
   image: String,
-  upvotes: {type: Number, default: 0}
+  likes: {type: Number, default: 0}
 });
 
 ArtworkSchema.methods.upvote = function() {

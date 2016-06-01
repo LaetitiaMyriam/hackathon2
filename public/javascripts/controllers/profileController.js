@@ -1,6 +1,10 @@
-app.controller('UserProfCtrl', ['$scope', 'artworks', 'auth', 'users', function ($scope, artworks, auth, users) {
+app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', function ($scope, artworksService, auth, users) {
+
   $scope.arrUsers = users.users;
+
+
   $scope.currentUsername = auth.currentUser().username;
+
 
   for (var j = 0; j < $scope.arrUsers.length; j++) {
     if ($scope.arrUsers[j].username === $scope.currentUsername) {
@@ -11,9 +15,11 @@ app.controller('UserProfCtrl', ['$scope', 'artworks', 'auth', 'users', function 
 
   $scope.addArt = function() {
     console.log('controller addArt');
-    users.uploadArt($scope.currentUser._id, {artworks: $scope.artImage});
+
+    users.addArtToDb($scope.currentUser._id, {image: $scope.artImage});
 
     $scope.artImage = '';
   };
+
 
 }]);

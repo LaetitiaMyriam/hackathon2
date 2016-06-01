@@ -9,7 +9,8 @@ app.factory('users', ['$http', 'auth', function ($http, auth){
       });
     },
 
-    uploadArt: function(id, artwork) {
+    addArtToDb: function(id, artwork) {
+      console.log("hello");
       console.log(id);
       console.log(artwork);
 
