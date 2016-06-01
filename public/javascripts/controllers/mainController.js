@@ -1,5 +1,6 @@
-// app.controller('MainCtrl', ['$scope', function($scope){
+app.controller('MainCtrl', ['$scope', 'artworksService', function ($scope, artworksService) {
+   $scope.artworks = artworksService.getArtworks();
 
-  
 
-// }]);
+
+}]);
