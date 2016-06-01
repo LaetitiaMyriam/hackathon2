@@ -60,3 +60,18 @@ p {
   padding: 0 18px;
   text-align: center;
 }
+
+/*Messing with the error styles in upload file
+*/
+#upload-failed{
+  display: none;
+}
+
+#retry-btn{
+  display: none;
+}
+
+#li-error{
+  background-color: white;
+  box-shadow: 0 0 2px 0 grey;
+}
