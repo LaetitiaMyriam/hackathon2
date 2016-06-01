@@ -5,7 +5,7 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
     .state('home', {
       url: '/home',
       templateUrl: '/templates/home.html',
-      controller: 'MainCtrl'
+      controller: 'MainCtrl',
       resolve: {
         usersPromise: ['users', function(users){
           return users.getAll();

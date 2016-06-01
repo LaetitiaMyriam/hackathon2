@@ -1,4 +1,4 @@
-app.controller('MainCtrl', ['$scope', 'artworks' function ($scope, artworks) {
+app.controller('MainCtrl', ['$scope', 'artworks', function ($scope, artworks) {
 
 
 
