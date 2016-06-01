@@ -27,6 +27,11 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
         }
       }]
     })
+    .state('profile', {
+      url: '/profile',
+      templateUrl: '/templates/userProfile.html',
+      controller: 'UserProfCtrl'
+    })
 
   $urlRouterProvider.otherwise('home');
 }]);
