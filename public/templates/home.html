@@ -1,0 +1,8 @@
+      <div class="artwork-container" ng-repeat="artwork in artworks">
+          <div class="artwork-item">
+              <div class="artwork-image-container">
+                <img class="artwork-image" ng-src="{{artwork.Image}}"  alt="film image"/>
+                  <div class="artwork-name">{{artwork.name | uppercase}}</div>
+              </div>               
+          </div>
+      </div>
