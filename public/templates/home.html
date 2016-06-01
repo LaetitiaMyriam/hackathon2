@@ -1,11 +1,8 @@
-  <ul ng-show="artworks">
-      <li class="artwork-container" ng-repeat="artwork in artworks">
+      <div class="artwork-container" ng-repeat="artwork in artworks">
           <div class="artwork-item">
               <div class="artwork-image-container">
                 <img class="artwork-image" ng-src="{{artwork.Image}}"  alt="film image"/>
-                  <div ng-show="isDeleting" class="movie-delete-icon glyphicon glyphicon-minus-sign delete-icon" ng-click="deleteMovie($index, movie)"/></div>
                   <div class="artwork-name">{{artwork.name | uppercase}}</div>
-                  <div class="artwork-sub-info"></div>               
+              </div>               
           </div>
-      </li>
-  </ul>
+      </div>

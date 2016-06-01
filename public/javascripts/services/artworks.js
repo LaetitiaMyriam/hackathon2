@@ -1,4 +1,4 @@
-app.factory('artworks', ['$http', 'auth', function($http, auth) {
+app.factory('artworksService', ['$http', 'auth', function($http, auth) {
     var artworks = [{
       name:"robocop",
       Image:"http://upload.wikimedia.org/wikipedia/en/b/b1/Robocop_poster.jpg",

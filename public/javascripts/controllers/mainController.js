@@ -1,4 +1,5 @@
-app.controller('MainCtrl', ['$scope', 'artworks', function ($scope, artworks) {
+app.controller('MainCtrl', ['$scope', 'artworksService', function ($scope, artworksService) {
+   $scope.artworks = artworksService.getArtworks();
 
 
 
