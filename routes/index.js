@@ -69,6 +69,8 @@ router.post('/users', function(req, res, next) {
 
     data.save();
 
+    console.log("hello from the server");
+
     res.json(data);//this will go back to post request then statement which still needs to be added
 
   });
