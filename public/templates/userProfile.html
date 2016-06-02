@@ -152,7 +152,41 @@
                 allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
             }
         });
-    </script>
+
+
+
+
+        function saveImage(){
+
+          //gets a file Object; since user only uploads 1 file, get the 0th element in the files array
+        //this is the actual 'file' the user uploaded
+          var file = document.getElementById("image-file").files[0];
+          
+          var reader = new FileReader();  
+
+          //Reading a file can take a while, so use the onload function of the reader to wait for the reading to complete
+          reader.onload = function(readerEvt) {
+
+             //readerEvt.target.result is the file's binary string representation
+              var binaryString = readerEvt.target.result;
+
+             //using btoa to convert to base 64
+              var base64data = btoa(binaryString);
+
+          };
+
+          //starts reading the file
+          reader.readAsBinaryString(file);
+        }
+
+        //Later, to recreate the image from base64 data:
+          
+          //create an empty HTML img element
+          var image = document.createElement( 'img' );
+
+          //populate the image's source - the first part is require, the `b64data` variable that's being concatenated is the base64 representation we got earlier
+          image.src = 'data:image/png;base64,' + base64data;
+            </script>
 
 <button>Add Artwork</button>
     
