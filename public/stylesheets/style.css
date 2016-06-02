@@ -61,6 +61,7 @@ p {
   text-align: center;
 }
 
+
 .artwork-container{
     float:left;
 }
@@ -75,4 +76,19 @@ p {
     height: 290px;
     width: 210px;
     position: relative;
+  }
+
+/*Messing with the error styles in upload file
+*/
+#upload-failed{
+  display: none;
+}
+
+#retry-btn{
+  display: none;
+}
+
+#li-error{
+  background-color: white;
+  box-shadow: 0 0 2px 0 grey;
 }
