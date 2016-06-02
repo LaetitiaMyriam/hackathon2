@@ -8,7 +8,7 @@ var passport = require('passport');
 require('../config/passport');
 
 var User = require('../models/Users');
-// var Artwork = require('../models/Artworks');
+var Artwork = require('../models/Artworks');
 
 
 router.get('/users', function(req, res, next) {
@@ -59,10 +59,20 @@ router.post('/login', function(req, res, next){
 
 router.post('/users', function(req, res, next) {
 
-  var curUser = User.findById(req.body.id);
+  var artwork = new Artwork(req.body.artwork);
+  
+  
 
-  console.log(req.body.id);
-  // res.send(req.body);
+  var curUser = User.findById(req.body.id, function (err, data){
+
+    data.artworks.push(artwork);
+
+    data.save();
+
+    res.json(data);//this will go back to post request then statement which still needs to be added
+
+  });
+  
 })
 
 
