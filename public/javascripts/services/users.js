@@ -10,13 +10,9 @@ app.factory('users', ['$http', 'auth', function ($http, auth){
     },
 
     addArtToDb: function(id, artwork) {
-      console.log("hello");
-      console.log(id);
-      console.log(artwork);
-
       var data = {id: id, artwork: artwork};
 
-      return $http.post('/users' , data);
+      return $http.post('/users', data);
     }
   }
 

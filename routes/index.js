@@ -61,18 +61,12 @@ router.post('/users', function(req, res, next) {
 
   var artwork = new Artwork(req.body.artwork);
   
-  
-
-  var curUser = User.findById(req.body.id, function (err, data){
+  User.findById(req.body.id, function (err, data){
 
     data.artworks.push(artwork);
-
     data.save();
 
-    console.log("hello from the server");
-
-    res.json(data);//this will go back to post request then statement which still needs to be added
-
+    res.json(data);
   });
   
 })
