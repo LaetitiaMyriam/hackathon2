@@ -95,10 +95,10 @@ h1{
 }
 
 .artwork-image-container{
-    display: inline-block;
+    /*display: inline-block;*/
     height: 290px;
     width: 210px;
-    position: relative;
+    /*position: relative;*/
 
 }
 
@@ -121,4 +121,33 @@ h1{
 #li-error{
   background-color: white;
   box-shadow: 0 0 2px 0 grey;
+}
+
+.artwork-page-main{
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: black;
+  width: 70%;
+}
+
+.lightbox-image-main{
+  margin-top: 0.5%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  margin-bottom: 0.5%;
+  float: left;
+  width: 99%;
+}
+
+.nav-bar-artwork{
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  margin-top: 4px;
+  background-color: white;
+  width: 99%;
+  height: 60px;
+  margin-bottom: 3px;
 }

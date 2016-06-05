@@ -42,6 +42,19 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
         }]
       }
     })
+    .state('artwork', {
+      url: '/artworkpage/:artId',
+      templateUrl: '/templates/artworkPage.html',
+      controller: 'artworkCtrl'
+      // resolve: {
+      //   usersPromise: ['artwork', function(artwork){
+      //     return artworkCtrl.showFilePage2();
+      //   }]
+      // }
+    })
+
+
+   
 
   // $urlRouterProvider.otherwise('home');
 }]);
