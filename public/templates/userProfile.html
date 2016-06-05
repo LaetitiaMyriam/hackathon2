@@ -39,7 +39,7 @@
                     <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
                     <button type="button" class="qq-upload-retry-selector qq-upload-retry" id="retry-btn">
                         <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
-                        Retry
+                       
                     </button>
 
                     <div class="qq-file-info">
@@ -91,6 +91,7 @@
     </script>
 
     <div>
+
         <h1 class="yoman">Name LastName</h1>
     <div>
   
@@ -119,6 +120,68 @@
 
       </div>
     </form>
+
+    <h1 ng-show="currentUser().username" class="yoman">{{currentUser.username}}</h1>
+
+    <div>
+
+
+
+      <form ng-submit="addArt()">
+        <h3>Add a new Artwork</h3>
+
+          <!-- <div class="form-group">
+            <input type="text" class="form-control" placeholder="image" ng-model="artImage"></input>
+          </div> -->
+           
+          <div>
+        </div>
+      </form>
+
+
+
+
+    </div>
+
+
+    <section>
+      <!--//PHOTOS--> 
+      <!-- 2. those pics then go here -->
+      
+    </section>
+
+
+  
+</div>
+
+    <!-- Fine Uploader DOM Element
+    ====================================================================== -->
+    <div id="fine-uploader-gallery"></div>
+
+    <!-- Your code to create an instance of Fine Uploader and bind to the DOM/template
+    ====================================================================== -->
+    <script>
+        var galleryUploader = new qq.FineUploader({
+            element: document.getElementById("fine-uploader-gallery"),
+            template: 'qq-template-gallery',
+            request: {
+                endpoint: '/server/uploads'
+            },
+            thumbnails: {
+                placeholders: {
+                    waitingPath: '/source/placeholders/waiting-generic.png',
+                    notAvailablePath: '/source/placeholders/not_available-generic.png'
+                }
+            },
+            validation: {
+                allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+            }
+        });
+
+    </script>
+     <button type="submit" class="btn btn-primary">Add To My Artworks</button>
+<!-- <button>Add Artwork</button> -->
+    
 
   </body>
 </html>

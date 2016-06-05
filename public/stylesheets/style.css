@@ -61,6 +61,15 @@ p {
   text-align: center;
 }
 
+h3 {
+font-family: 'Open Sans';
+}
+
+h1{
+  font-family: 'Open Sans';
+
+}
+
 /*Messing with the error styles in upload file
 */
 #upload-failed{
@@ -90,6 +99,13 @@ p {
     height: 290px;
     width: 210px;
     position: relative;
+
+}
+
+.artwork-image{
+    height: 290px;
+    width: 210px;
+
   }
 
 /*Messing with the error styles in upload file
