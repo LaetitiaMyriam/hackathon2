@@ -1,7 +1,8 @@
 body {
-  margin: 0;
+
   background-color: #ddd;
 }
+
 ​
 nav li {
     display: inline-block;
@@ -70,6 +71,11 @@ h1{
   font-family: 'Open Sans';
 
 }
+
+/*div .form-group {
+  background-color: white*/
+
+}
 =======
 >>>>>>> bb4d92f07112c4a44161f61722330a452255cdef
 /*Messing with the error styles in upload file
@@ -86,33 +92,108 @@ h1{
   background-color: white;
   box-shadow: 0 0 2px 0 grey;
 }
-
+div.row {
+  margin: 0 auto;
+  padding-left: 10px;
+  float: center;
+}
 .artwork-container{
-    float:left;
+    display: inline-block;
+    float: center;
+    margin-right: 0 auto; 
+    margin-left: 0 auto;
 }
 
 .artwork-item{
     font-size: 14px;
-    padding: 15px    
+    padding: 15px;  
+    float: center; 
+    margin-left: 0 auto;
+    margin-right: 0 auto; 
 }
 
 .artwork-image-container{
     display: inline-block;
+    float: center;
     height: 290px;
     width: 210px;
     position: relative;
+    margin: 0 auto;
 
 }
 
 .artwork-image{
+   border: 1px solid black;
+   box-shadow: 10px 10px 5px #888888;
+    float: center;
     height: 290px;
     width: 210px;
-
+    margin-right: 0 auto;
+    margin-left: 0 auto;
   }
+
+/*  #wrap {
+  height: 290px;
+  width: 210px;
+}
+#wrap img {
+  min-height: 100%;
+  min-width: 100%;
+}*/
+span {
+  margin-right: 10px;
+}
+
+.artwork-name{
+  padding-top: 10px;
+}
+
+  @media (max-width: 700px) {
+.row:before {
+  display: table;
+  content: "";
+}
+
+.row:after {
+  display: table;
+  content: "";
+  clear: both;
+}
+/*#wrap {
+  height: 100px;
+  width: 100px;
+}
+#wrap img {
+  min-height: 100%;
+  min-width: 100%;*/
+/*}*/
+@media (max-width: 700px) {
+.artwork-container{ 
+  width: 100%;
+  }
+.artwork-item{
+   width: 100%;
+}
+.artwork-image-container {
+  width: 100%;
+  }
+.artwork-image {
+  width: 100%;
+  }
+}
+/*#wrap {
+  height: 100px;
+  width: 100px;
+}
+#wrap img {
+  min-height: 100%;
+  min-width: 100%;
+}*/
+/*}*/
 
 /*Messing with the error styles in upload file
 */
-#upload-failed{
+/*#upload-failed{
   display: none;
 }
 
@@ -123,4 +204,4 @@ h1{
 #li-error{
   background-color: white;
   box-shadow: 0 0 2px 0 grey;
-}
+}*/
