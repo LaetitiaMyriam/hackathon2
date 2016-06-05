@@ -61,6 +61,7 @@ p {
   text-align: center;
 }
 
+<<<<<<< HEAD
 h3 {
 font-family: 'Open Sans';
 }
@@ -69,6 +70,8 @@ h1{
   font-family: 'Open Sans';
 
 }
+=======
+>>>>>>> bb4d92f07112c4a44161f61722330a452255cdef
 /*Messing with the error styles in upload file
 */
 #upload-failed{
@@ -98,9 +101,26 @@ h1{
     height: 290px;
     width: 210px;
     position: relative;
+
 }
 
 .artwork-image{
     height: 290px;
     width: 210px;
+
+  }
+
+/*Messing with the error styles in upload file
+*/
+#upload-failed{
+  display: none;
+}
+
+#retry-btn{
+  display: none;
+}
+
+#li-error{
+  background-color: white;
+  box-shadow: 0 0 2px 0 grey;
 }
