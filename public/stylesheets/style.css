@@ -62,22 +62,21 @@ p {
   text-align: center;
 }
 
-<<<<<<< HEAD
+
 h3 {
 font-family: 'Open Sans';
 }
 
-h1{
+.site-name{
   font-family: 'Open Sans';
-
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/*div .form-group {
-  background-color: white*/
 
-}
-=======
->>>>>>> bb4d92f07112c4a44161f61722330a452255cdef
+
+
+
 /*Messing with the error styles in upload file
 */
 #upload-failed{
@@ -92,82 +91,64 @@ h1{
   background-color: white;
   box-shadow: 0 0 2px 0 grey;
 }
-div.row {
-  margin: 0 auto;
-  padding-left: 10px;
-  float: center;
-}
-.artwork-container{
-    display: inline-block;
-    float: center;
-    margin-right: 0 auto; 
-    margin-left: 0 auto;
-}
 
-.artwork-item{
-    font-size: 14px;
-    padding: 15px;  
-    float: center; 
-    margin-left: 0 auto;
-    margin-right: 0 auto; 
-}
-
-.artwork-image-container{
-    display: inline-block;
-    float: center;
-    height: 290px;
-    width: 210px;
-    position: relative;
+.big-art-wrapper{
+    overflow: hidden;
+    width: 90%;
+    display: block;
     margin: 0 auto;
+    
+}
 
+.artwork-container{
+  float:left;
+  width:25%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 26px;
+}
+
+.artwork-image-container{ 
+    display: block;
+    max-height: 250px;
+    max-width: 250px; 
 }
 
 .artwork-image{
    border: 1px solid black;
-   box-shadow: 10px 10px 5px #888888;
+   box-shadow: 7px 7px 2px #888888;
     float: center;
-    height: 290px;
-    width: 210px;
-    margin-right: 0 auto;
-    margin-left: 0 auto;
+    width:100%;
+   /* height: 290px;
+    width: 210px;*/
+    
   }
 
-/*  #wrap {
-  height: 290px;
-  width: 210px;
-}
-#wrap img {
-  min-height: 100%;
-  min-width: 100%;
-}*/
-span {
-  margin-right: 10px;
+ .artwork-name{
+  padding-top: 6px;
+ } 
+
+.glyphicon {
+  display: inline;
+  width: 33.33%;
+  
 }
 
-.artwork-name{
-  padding-top: 10px;
-}
 
-  @media (max-width: 700px) {
+
+
+
+/*  @media (max-width: 650px) {
 .row:before {
   display: table;
   content: "";
 }
-
 .row:after {
   display: table;
   content: "";
   clear: both;
 }
-/*#wrap {
-  height: 100px;
-  width: 100px;
-}
-#wrap img {
-  min-height: 100%;
-  min-width: 100%;*/
-/*}*/
-@media (max-width: 700px) {
+@media (max-width: 650px) {
 .artwork-container{ 
   width: 100%;
   }
@@ -179,29 +160,161 @@ span {
   }
 .artwork-image {
   width: 100%;
-  }
-}
-/*#wrap {
-  height: 100px;
-  width: 100px;
-}
-#wrap img {
-  min-height: 100%;
-  min-width: 100%;
-}*/
-/*}*/
+  }*/
 
-/*Messing with the error styles in upload file
-*/
-/*#upload-failed{
-  display: none;
-}
 
-#retry-btn{
-  display: none;
+/*LIGHT-BOX*/
+
+.lightbox-page {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    max-width: 800px;
+    max-height: 600px;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
-#li-error{
+.lightbox-user {
+    overflow: hidden;
+    width: 700px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+}
+
+.lightbox-user-pic {
+  float: left;
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
   background-color: white;
-  box-shadow: 0 0 2px 0 grey;
-}*/
+  border: black 1px solid;
+}
+
+.lightbox-user-name {
+  float: left;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+
+}
+
+.lightbox-big-container {
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    left: 50%;
+    width: 920px;
+    margin-left: -460px;
+    padding: 40px 95px;
+    background: #f4f4f4;
+    background-position: fixed;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.lightbox-image-main {
+  margin-top: 0.5%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  margin-bottom: 0.5%;
+  float: left;
+  width: 99%;
+}
+
+.lightbox-nav{
+  position: relative;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  margin-top: 4px;
+  background-color: white;
+  width: 99%;
+  height: 40px;
+  margin-bottom: 3px;
+}
+
+.lightbox-leftside-list {
+    float: left;
+    width: 60%;
+    border-radius: 6px;
+    background-color: #fff;
+    height: 600px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  }
+
+.lightbox-rightside-list{
+    display: block;
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border-radius: 6px;
+    width: 35%;
+    height: 220px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.lightbox-likes {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.lightbox-likes-count {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    line-height: 1;
+}
+
+.lightbox-views {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.lightbox-views-count {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    line-height: 1;
+}
+
+.glyphicon-eye-open {
+  padding-right: 10px;
+  padding-left: 7px;
+}
+
+.glyphicon-hand-right {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#form-control-comments-head {
+  font-size: 16px;
+  font-family: 'Poiret One', cursive;
+  display: block;
+  width: 95%;
+  margin: 10px;
+}
+
+.lightbox-comments {
+  padding: 10px 10px;
+
+}
+

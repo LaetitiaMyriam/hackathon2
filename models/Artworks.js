@@ -1,8 +1,11 @@
 var mongoose = require('mongoose');
 
 var ArtworkSchema = new mongoose.Schema({
-  name: String,
-  image: String,
+  id: String,
+  username: String,
+  artworkname: String,
+  url: String,
+  comments: Array,
   likes: {type: Number, default: 0}
 });
 
