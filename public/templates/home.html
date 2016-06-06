@@ -1,8 +1,22 @@
+    
+<section class="big-art-wrapper"> 
       <div class="artwork-container" ng-repeat="artwork in artworks">
-          <div class="artwork-item">
-              <div class="artwork-image-container">
-                <img class="artwork-image" ng-src="{{artwork.Image}}"  alt="film image"/>
-                  <div class="artwork-name">{{artwork.name | uppercase}}</div>
-              </div>               
+
+          <div class="artwork-image-container">
+
+            <img class="artwork-image" ng-src="{{artwork.Image}}"  alt="film image"/>
+
+            <div class="artwork-name">{{artwork.name | uppercase}}</div>
+
           </div>
+          
+          <div class="glyphicon">
+                <span class="glyphicon glyphicon-comment">{{artwork.comments.length}}</span>
+             <!--    <span class="glyphicon glyphicon-eye-open">{{artwork.views}}</span> -->
+                <span class="glyphicon glyphicon-thumbs-up">{{artwork.upvotes}}</span>
+          </div>
+
+
       </div>
+</section>
+    
