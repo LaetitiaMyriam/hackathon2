@@ -5,7 +5,7 @@ app.factory('artworksService', ['$http', 'auth', function($http, auth) {
       Image:"http://media.virbcdn.com/cdn_images/resize_1024x1024/68/49630c7563ea695e-DSC1619_eugenie_sophie_berger_photography.jpg",
       comments: [{user:"b", text:"cool!"}],
       upvotes: 2,
-      views: 1
+      
     }, {
       name:"Eugenie Berger",
       Image:"http://media.virbcdn.com/cdn_images/resize_1024x1024/69/82bffd584ab309fb-_DSC3252_istanbul_eugenie_sophie_berger_photography.jpg",
