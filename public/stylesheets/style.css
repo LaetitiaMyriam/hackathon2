@@ -10,6 +10,7 @@ nav {
     background-color: #333333;
     position:fixed;
     width: 100%;
+    font-size: 18px;
     top: 0;
 }
 ​
@@ -62,12 +63,24 @@ p {
 }
 
 h3 {
-font-family: 'Open Sans';
+font-family: 'Poiret One', cursive;
 }
 
 h1{
-  font-family: 'Open Sans';
+font-family: 'Poiret One', cursive;
 
+}
+
+.navbar-collapse{
+ font-family: 'Poiret One', cursive;
+}
+
+.logo-text{
+  font-family: 'Poiret One', cursive;
+}
+
+.text-center{
+  font-family: 'Poiret One', cursive;
 }
 
 /*Messing with the error styles in upload file
@@ -123,15 +136,62 @@ h1{
   box-shadow: 0 0 2px 0 grey;
 }
 
-.artwork-page-main{
-  display: block;
-  margin: 0 auto;
-  overflow: hidden;
-  background-color: black;
-  width: 70%;
+
+
+
+
+/*LIGHT-BOX*/
+
+.lightbox-page {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    max-width: 800px;
+    max-height: 600px;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
 }
 
-.lightbox-image-main{
+.lightbox-user {
+    overflow: hidden;
+    width: 700px;
+    margin: 10px 0 10px 0;
+    padding: 0;
+}
+
+.lightbox-user-pic {
+  float: left;
+  width: 46px;
+  height: 46px;
+  border-radius: 100px;
+  background-color: white;
+  border: black 1px solid;
+}
+
+.lightbox-user-name {
+  float: left;
+  font-family: 'Poiret One', cursive;
+  font-size: 20px;
+
+}
+
+.lightbox-big-container {
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    left: 50%;
+    width: 920px;
+    margin-left: -460px;
+    padding: 40px 95px;
+    background: #f4f4f4;
+    background-position: fixed;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.lightbox-image-main {
   margin-top: 0.5%;
   margin-right: 0.5%;
   margin-left: 0.5%;
@@ -140,7 +200,7 @@ h1{
   width: 99%;
 }
 
-.nav-bar-artwork{
+.lightbox-nav{
   position: relative;
   margin: 0 auto;
   overflow: hidden;
@@ -148,6 +208,89 @@ h1{
   margin-top: 4px;
   background-color: white;
   width: 99%;
-  height: 60px;
+  height: 40px;
   margin-bottom: 3px;
+}
+
+.lightbox-leftside-list {
+    float: left;
+    width: 60%;
+    border-radius: 6px;
+    background-color: #fff;
+    height: 600px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+  }
+
+.lightbox-rightside-list{
+    display: block;
+    float: right;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    border-radius: 6px;
+    width: 35%;
+    height: 220px;
+    background-color: #fff;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+}
+
+.lightbox-likes {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.lightbox-likes-count {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    line-height: 1;
+}
+
+.lightbox-views {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    width: 100%;
+    font-size: 13px;
+    line-height: 1;
+    border-bottom: 1px solid #ddd;
+    box-sizing: border-box;
+}
+
+.lightbox-views-count {
+    font-size: 16px;
+    font-family: 'Poiret One', cursive;
+    line-height: 1;
+}
+
+.glyphicon-eye-open {
+  padding-right: 10px;
+  padding-left: 7px;
+}
+
+.glyphicon-hand-right {
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+#form-control-comments-head {
+  font-size: 16px;
+  font-family: 'Poiret One', cursive;
+  display: block;
+  width: 95%;
+  margin: 10px;
+}
+
+.lightbox-comments {
+  padding: 10px 10px;
+
 }

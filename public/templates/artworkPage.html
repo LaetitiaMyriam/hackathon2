@@ -1,7 +1,46 @@
-  <div class="artwork-page-main">
-    <img class="lightbox-image-main" ng-src="{{artwork.Image}}" />
-        {{artwork.name}}
-    <div class="nav-bar-artwork">
-     <div></div>
+
+<div class="lightbox-big-container">
+  <div class="lightbox-user">
+    <div class="lightbox-user-pic"></div>
+    <p class="lightbox-user-name">{{artwork.username}}</p>
+  </div>
+  <div class="lightbox-page">
+    <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
+    <div class="lightbox-nav">
+     {{artwork.artworkname}}
     </div>
   </div>
+
+
+<div class="lightbox-leftside-list">
+  <form ng-submit="addComment()">
+      <div id="form-control-comments-head">
+        <h3>Add a new comment</h3>
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Comment" ng-model="body"></input>
+        </div>
+      <!-- {{artwork.comments}} -->
+        <button type="submit" class="btn btn-primary">Post</button>
+      </div>
+  </form>
+
+
+  <div class="lightbox-comments" ng-repeat="comment in artwork.comments">
+    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+
+     {{comment.upvotes}} - {{comment.author}}: 
+
+    <span class="comment-body">{{comment.body}}</span>
+  </div>
+</div>
+
+  <ul class="lightbox-rightside-list">
+    <li class="lightbox-likes">
+      <span class="lightbox-likes-count"><i class="glyphicon glyphicon-hand-right" ng-click="incrementUpvotes(artwork)"></i>{{artwork.upvotes}}</span>
+    </li>
+    <li class="lightbox-views">
+      <img>
+      <span class="lightbox-views-count"><i class="glyphicon glyphicon-eye-open"></i>5,776</span>
+    </li>
+  </ul>
+</div>

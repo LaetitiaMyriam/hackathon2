@@ -42,7 +42,7 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
         }]
       }
     })
-    .state('artwork', {
+    .state('artworkpage', {
       url: '/artworkpage/:artId',
       templateUrl: '/templates/artworkPage.html',
       controller: 'artworkCtrl'

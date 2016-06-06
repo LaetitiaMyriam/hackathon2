@@ -8,5 +8,4 @@ app.controller('MainCtrl', ['$scope', 'artworksService', function ($scope, artwo
     console.log($scope.currentArtwork);
    };
 
-
 }]);
