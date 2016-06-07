@@ -1,9 +1,10 @@
 app.factory('artworksService', ['$http', 'auth', function($http, auth) {
     var artworks = [{
-      id : "0",
-      username: "Eugenie Berger",
+      id : "575704410d0ddb9059c7fcf3",
+      userId: "575704110d0ddb9059c7fcf1",
+      username: "b",
       artworkname: "ARTWORKNAME",
-      url:"http://media.virbcdn.com/cdn_images/resize_1024x1024/68/49630c7563ea695e-DSC1619_eugenie_sophie_berger_photography.jpg",
+      url:"https://res.cloudinary.com/tlvart/image/upload/v1465320514/ug2vvfxdcexb5mnlr9ug.jpg",
       comments:[{
           body: "",
           author: ""
@@ -83,14 +84,25 @@ app.factory('artworksService', ['$http', 'auth', function($http, auth) {
   //     });
   //   };
 
-  var addComment = function(artwork, comment) {
-    console.log(artworks[artwork]);
-      artworks[artwork].comments.push(comment);
+  // var addComment = function(artwork, comment) {
+  //   console.log(artworks[artwork]);
+  //     artworks[artwork].comments.push(comment);
+  //   };
+
+
+
+  var addComment = function(id, userId, comment) {
+
+    obj = {
+      userId: userId,
+      artId: id,
+      comment: comment
     };
 
-  // var addComment = function(id, comment) {
-  //     return $http.post('/users/' + id + '/comments', comment);
-  //   };
+      return $http.post('/users/comments', obj);
+    };
+
+
 
   var obj = {    
     addComment: addComment,

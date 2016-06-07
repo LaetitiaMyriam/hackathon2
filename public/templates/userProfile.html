@@ -36,18 +36,11 @@
          urls.push(result[i].secure_url);
          }
 
-
-         //FIND CURRENT USER ID
          var token = localStorage['final-project'];
          var userId = JSON.parse(atob(token.split('.')[1]))._id;
-         // // console.log(userId);
-         // console.log(typeof userId);
-         //JQUERY POST REQUEST
+ 
          var obj = {userId: userId, urls: urls}
          $.post('/addurls', obj);
-
-         //CLEAR URLS ARRAY
-         //urls = [];
     });
 
 

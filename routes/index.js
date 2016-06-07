@@ -9,6 +9,7 @@ require('../config/passport');
 
 var User = require('../models/Users');
 var Artwork = require('../models/Artworks');
+var Comment = require('../models/Comments');
 
 
 router.get('/users', function(req, res, next) {
@@ -40,6 +41,7 @@ router.post('/register', function(req, res, next){
   });
 });
 
+
 router.post('/login', function(req, res, next){
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'Please fill out all fields'});
@@ -57,6 +59,7 @@ router.post('/login', function(req, res, next){
 });
 
 
+
 router.post('/users', function(req, res, next) {
   var artwork = new Artwork(req.body.artwork);
   
@@ -67,45 +70,49 @@ router.post('/users', function(req, res, next) {
 
     res.json(data);
   });
-  
-})
+});
+
 
 router.post('/addurls', function(req, res){
-
   User.findById(req.body.userId, function (err, data){
 
     var user = data;
     var urls = req.body['urls[]'];
     
     if ((typeof urls) == 'string'){
-
       var artwork = new Artwork({userId: req.body.userId, url: urls});
-      user.artworks.push(artwork);
-      
+      user.artworks.push(artwork);    
     };
 
     if ((typeof urls) == 'object'){
       for ( var i = 0; i < urls.length; i++) {
-
             var artwork = new Artwork({userId: req.body.userId, url: urls[i]});
             user.artworks.push(artwork);
       };
       user.save();
     };    
+  });
 });
 
-  
 
-  // var arr = req.body['urls[]'];
+router.post('/users/comments', function(req, res, next) { 
+  User.findById(req.body.userId, function (err, data) {
 
-  // for ( var j = 0; j < arr.length; j++) {
-  //   var artwork = new Artwork({userId: req.body.userId, url: arr[j]};
+    
 
-  //   var artwork = undefined;
-  // };
+    for (var i = 0; i < data.artworks.length; i++) {
 
-  
-})
+      if (data.artworks[i]._id == req.body.artId) {
+        console.log(data.artworks[i]);
+        
+        var comment = new Comment(req.body.comment);
+        data.artworks[i].comments.push(comment) 
+      }
+    }
+    console.log(data.artworks);
+    data.save();
+  });
+  });
 
 
 module.exports = router;

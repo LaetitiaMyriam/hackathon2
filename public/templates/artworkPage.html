@@ -19,16 +19,15 @@
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Comment" ng-model="body"></input>
         </div>
-      <!-- {{artwork.comments}} -->
         <button type="submit" class="btn btn-primary">Post</button>
       </div>
   </form>
 
 
-  <div class="lightbox-comments" ng-repeat="comment in artwork.comments">
+  <div ng-show="good()" class="lightbox-comments" ng-repeat="comment in artwork.comments">
     <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
 
-     {{comment.upvotes}} - {{comment.author}}: 
+     {{comment.upvotes}}  {{comment.author}}: 
 
     <span class="comment-body">{{comment.body}}</span>
   </div>
