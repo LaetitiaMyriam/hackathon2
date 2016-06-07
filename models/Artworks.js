@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var ArtworkSchema = new mongoose.Schema({
   id: String,
-  username: String,
+  userId: String,
   artworkname: String,
   url: String,
   comments: Array,

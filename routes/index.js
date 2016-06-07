@@ -70,5 +70,42 @@ router.post('/users', function(req, res, next) {
   
 })
 
+router.post('/addurls', function(req, res){
+
+  User.findById(req.body.userId, function (err, data){
+
+    var user = data;
+    var urls = req.body['urls[]'];
+    
+    if ((typeof urls) == 'string'){
+
+      var artwork = new Artwork({userId: req.body.userId, url: urls});
+      user.artworks.push(artwork);
+      
+    };
+
+    if ((typeof urls) == 'object'){
+      for ( var i = 0; i < urls.length; i++) {
+
+            var artwork = new Artwork({userId: req.body.userId, url: urls[i]});
+            user.artworks.push(artwork);
+      };
+      user.save();
+    };    
+});
+
+  
+
+  // var arr = req.body['urls[]'];
+
+  // for ( var j = 0; j < arr.length; j++) {
+  //   var artwork = new Artwork({userId: req.body.userId, url: arr[j]};
+
+  //   var artwork = undefined;
+  // };
+
+  
+})
+
 
 module.exports = router;
