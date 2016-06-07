@@ -73,7 +73,11 @@ font-family: 'Open Sans';
   margin-bottom: 20px;
 }
 
-
+h3.yoman {
+  color : black;
+  font-family: 'Open Sans';
+  text-align: center;
+}
 
 
 
@@ -138,33 +142,8 @@ font-family: 'Open Sans';
 
 
 
-/*  @media (max-width: 650px) {
-.row:before {
-  display: table;
-  content: "";
-}
-.row:after {
-  display: table;
-  content: "";
-  clear: both;
-}
-<<<<<<< HEAD
-=======
 
->>>>>>> 2831799cf54257862b496a652a712b874e72f7c5
-@media (max-width: 650px) {
-.artwork-container{ 
-  width: 100%;
-  }
-.artwork-item{
-   width: 100%;
-}
-.artwork-image-container {
-  width: 100%;
-  }
-.artwork-image {
-  width: 100%;
-  }*/
+
 
 
 /*LIGHT-BOX*/
@@ -322,3 +301,141 @@ font-family: 'Open Sans';
 
 }
 
+
+
+
+  @media (max-width: 750px) {
+.big-art-wrapper{
+  overflow: hidden;
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+    
+}
+
+.artwork-container{ 
+  width: 100%;
+  padding-left: 50px;
+  }
+
+ /* display: block;
+  float: left;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 26px;*/
+/*  max-height: 250px;
+  max-width: 250px; */
+
+/*.artwork-item{
+  width: 100%;
+  }*/
+.artwork-image-container {
+  width: 100%;
+  display: block;
+  max-height: 250px;
+  max-width: 250px; 
+  }
+.artwork-image {
+  width: 100%;
+  float: center;
+  }
+
+/*
+.lightbox-page {
+  width: 100%;
+  display: block;
+
+  }
+.lightbox-user {
+  width: 100%;
+  display: block;
+ 
+  }
+.lightbox-user-pic {
+  width: 100%;
+  display: block;
+
+  }*/
+.lightbox-big-container {
+  width: 100%;
+  position: relative;
+  left: 0px;
+  margin-left: 0px;
+  background:#DDD;
+  box-sizing:border-box;
+  border-radius: 6px; 
+  
+  }
+/*.lightbox-image-main {
+  width: 100%;
+  display: block;*/
+/*  max-height: 250px;
+  max-width: 250px; 
+/*  }
+.lightbox-leftside-list {
+  width: 100%;
+  display: block;
+  float: left;
+
+  }
+.lightbox-rightside-list{
+  width: 100%;
+  display: block;
+  float: right;
+}*/
+
+.row:before {
+  display: table;
+  content: "";
+  }
+.row:after {
+  display: table;
+  content: "";
+  clear: both;
+  }
+}
+
+
+
+@media (max-width: 650px) {
+  .big-art-wrapper{
+  width: 100%;
+  }
+  .artwork-container{ 
+  width: 100%;
+  }
+/*.artwork-item{
+   width: 100%;
+  }*/
+  .artwork-image-container {
+  width: 100%;
+  }
+  .artwork-image {
+  width: 100%;
+  }
+
+  /*.lightbox-page {
+  width: 100%;
+  }
+  .lightbox-user {
+  width: 100%;
+  }
+  .lightbox-user-pic {
+  width: 100%;
+  }
+  .lightbox-big-container {
+  width: 100%;
+  }
+  .lightbox-image-main {
+  width: 100%;
+  }
+  .lightbox-leftside-list {
+  width: 100%;
+  }
+
+  .lightbox-rightside-list{
+   width: 100%;
+  }*/
+/*.lightbox-comments {
+  }*/
+}

@@ -4,6 +4,10 @@ app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', fu
   $scope.uploadedImage;
   $scope.imagesObj;
 
+  $scope.howdy = function() {
+    alert("hello");
+  }
+
 
   console.log($scope.arrUsers)
 
