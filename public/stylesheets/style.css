@@ -148,6 +148,10 @@ font-family: 'Open Sans';
   content: "";
   clear: both;
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2831799cf54257862b496a652a712b874e72f7c5
 @media (max-width: 650px) {
 .artwork-container{ 
   width: 100%;
