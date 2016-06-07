@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
   <head>
+
 
     <!-- Fine Uploader Gallery CSS file
     ====================================================================== -->
@@ -13,6 +15,17 @@
     <!-- Fine Uploader Gallery template
     ====================================================================== -->
     <!-- <script type="text/template" id="qq-template-gallery">
+=======
+    <link href="fine-uploader/fine-uploader/fine-uploader-gallery.css" rel="stylesheet">
+    <script src="fine-uploader/fine-uploader/fine-uploader.js"></script>
+ 
+  </head>
+
+  <body>
+
+    <script type="text/template" id="qq-template-gallery">
+      <form id="uploadForm" enctype="multipart/form-data" action="/api/photo" method="post">
+>>>>>>> 9dadaf5b48b804d78a10097d4d15ae879672bff6
         <div class="qq-uploader-selector qq-uploader qq-gallery" qq-drop-area-text="Drop files here">
             <div class="qq-total-progress-bar-container-selector qq-total-progress-bar-container">
                 <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-total-progress-bar-selector qq-progress-bar qq-total-progress-bar"></div>
@@ -33,19 +46,25 @@
                     <div class="qq-progress-bar-container-selector qq-progress-bar-container">
                         <div role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" class="qq-progress-bar-selector qq-progress-bar"></div>
                     </div>
+<<<<<<< HEAD
+                    <span class="qq-upload-spinsner-selector qq-upload-spinner"></span>
+                    <div class="qq-thumbnail-wrapper"  ng-model="imagesObj">
+                        <img   ng-click="showImg()"class="qq-thumbnail-selector" qq-max-size="120" qq-server-scale>
+=======
                     <span class="qq-upload-spinner-selector qq-upload-spinner"></span>
                     <div class="qq-thumbnail-wrapper">
                         <img class="qq-thumbnail-selector" id="uploaded-img" ng-model="" qq-max-size="120" qq-server-scale>
+>>>>>>> 2831799cf54257862b496a652a712b874e72f7c5
                     </div>
                     <button type="button" class="qq-upload-cancel-selector qq-upload-cancel">X</button>
                     <button type="button" class="qq-upload-retry-selector qq-upload-retry" id="retry-btn">
                         <span class="qq-btn qq-retry-icon" aria-label="Retry"></span>
-                        Retry
+                       
                     </button>
 
                     <div class="qq-file-info">
                         <div class="qq-file-name">
-                            <span class="qq-upload-file-selector qq-upload-file"></span>
+                            <span ng-model="uploadedImage" class="qq-upload-file-selector qq-upload-file">hola</span>
                             <span class="qq-edit-filename-icon-selector qq-edit-filename-icon" aria-label="Edit filename"></span>
                         </div>
                         <input class="qq-edit-filename-selector qq-edit-filename" tabindex="0" type="text">
@@ -87,39 +106,50 @@
                 </div>
             </dialog>
         </div>
+<<<<<<< HEAD
     </script> -->
   </head>
 
+        <button type="submit" class="btn btn-primary" ng-click="test(imagesObj)">Add To My Artworks</button>
+      </form>
+    </script>
 
-
-  <body>
 
     <div>
+
+        <h1 class="yoman">Name LastName</h1>
+    <div>
+
     <h1 class="yoman">{{currentUser.username}}</h1>
 
- <!--    <div> -->
+  
+    <form ng-submit="addArt()">
+      </div>
+        <h3>Add a new Artwork</h3>
+          <div id="fine-uploader-gallery"></div>
+            <script>
+                var galleryUploader = new qq.FineUploader({
+                    element: document.getElementById("fine-uploader-gallery"),
+                    template: 'qq-template-gallery',
+                    request: {
+                        endpoint: '/server/uploads'
+                    },
+                    thumbnails: {
+                        placeholders: {
+                            waitingPath: '/source/placeholders/waiting-generic.png',
+                            notAvailablePath: '/source/placeholders/not_available-generic.png'
+                        }
+                    },
+                    validation: {
+                        allowedExtensions: ['jpeg', 'jpg', 'gif', 'png']
+                    }
+                });
+            </script>
 
+      </div>
+    </form>
 
-
-     <!--  <form ng-submit="addArt()">
-        <h3>Add a new Artwork</h3> -->
-
-          <!-- <div class="form-group">
-            <input type="text" class="form-control" placeholder="image" ng-model="artImage"></input>
-          </div> -->
-        <!--    
-          <div>
-        </div>
-      </form> -->
-
-
-
-<!-- 
-    </div> -->
-
-         <!--     <input type="file" />
-   
-               <button type="submit" class="btn btn-primary">Add To My Artworks</button> -->
+    <h1 ng-show="currentUser().username" class="yoman">{{currentUser.username}}</h1>
 
 
 <div>
@@ -170,8 +200,6 @@
    
 <!-- <button>Add Artwork</button> -->
     
- 
 
-</div>
   </body>
 </html>

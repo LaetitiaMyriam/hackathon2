@@ -1,6 +1,21 @@
 app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', function ($scope, artworksService, auth, users) {
 
   $scope.arrUsers = users.users;
+  $scope.uploadedImage;
+  $scope.imagesObj;
+
+
+  console.log($scope.arrUsers)
+
+  $scope.showImg = function(){
+    console.log('hello')
+    console.log($scope.imagesObj);
+  }
+
+
+  $scope.test = function(obj){
+    console.log($scope.imagesObj);
+  };
 
 
   $scope.currentUsername = auth.currentUser().username;
@@ -14,10 +29,8 @@ app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', fu
 
 
   $scope.addArt = function() {
-    console.log('controller addArt');
 
     users.addArtToDb($scope.currentUser._id, {image: $scope.artImage});
-
     $scope.artImage = '';
   };
 
