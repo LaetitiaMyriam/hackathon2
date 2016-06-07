@@ -1,5 +1,39 @@
 
 
+<div class="lightbox-big-container">
+  <div class="lightbox-user">
+    <div class="lightbox-user-pic"></div>
+    <p class="lightbox-user-name">{{artwork.username}}</p>
+  </div>
+  <div class="lightbox-page">
+    <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
+    <div class="lightbox-nav">
+     {{artwork.artworkname}}
+    </div>
+  </div>
+
+
+  <div id="opener2"></div>
+
+
+  <script>
+     //cloud name for everything
+     cloudinary.setCloudName('tlvart');
+
+
+     //creates widget frame on click of button
+     cloudinary.applyUploadWidget(document.getElementById('opener2'), 
+     { theme:'white', 
+       stylesheet: 'li.camera{display: none} li.url{display: none} li.local{display: none} #cloudinary-navbar{height: 0px; border-color: none; border-bottom-width: 0px; border-bottom-style: 0px; border: 0px solid white;} #cloudinary-widget{height: 452px}', upload_preset: 'sgygqy8w'}, 
+     function(error, result) {        
+        var urls = [];
+
+
+        for ( var i = 0; i < result.length; i ++ ){
+         urls.push(result[i].secure_url);
+         }
+
+
 <div>
  <h3 class="yoman" ng-show="currentUser">Welcome {{ currentUser.username }}</h3>
 </div>
@@ -10,3 +44,24 @@
 
 
 
+=======
+
+         //FIND CURRENT USER ID
+         var token = localStorage['final-project'];
+         var userId = JSON.parse(atob(token.split('.')[1]))._id;
+         // // console.log(userId);
+         // console.log(typeof userId);
+         //JQUERY POST REQUEST
+         var obj = {userId: userId, urls: urls}
+         $.post('/addurls', obj);
+
+         //CLEAR URLS ARRAY
+         //urls = [];
+    });
+
+
+
+   </script>
+
+</div>
+>>>>>>> profil_page_2

@@ -8,6 +8,7 @@ app.factory('artworksService', ['$http', 'auth', function($http, auth) {
           body: "",
           author: ""
       }],
+      upvotes: 8
     }, {
       id : "1",
       username: "Eugenie Berger",

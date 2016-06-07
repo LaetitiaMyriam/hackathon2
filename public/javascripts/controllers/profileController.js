@@ -9,7 +9,7 @@ app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', fu
   }
 
 
-  console.log($scope.arrUsers)
+  console.log('users', $scope.arrUsers);
 
   $scope.showImg = function(){
     console.log('hello')
