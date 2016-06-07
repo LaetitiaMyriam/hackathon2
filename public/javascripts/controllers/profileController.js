@@ -27,6 +27,15 @@ app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', fu
     }
   };
 
+  // $scope.currentUsermail = auth.currentUser().email;
+
+
+  // for (var z = 0; j < $scope.arrUsers.length; z++) {
+  //   if ($scope.arrUsers[z].mail === $scope.currentUsermail) {
+  //     $scope.currentUser = $scope.arrUsers[z];
+  //   }
+  // };
+
 
   $scope.addArt = function() {
 

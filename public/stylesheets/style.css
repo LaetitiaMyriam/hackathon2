@@ -309,6 +309,8 @@ font-family: 'Open Sans';
   padding-left: 10px;
 }
 
+
+
 #form-control-comments-head {
   font-size: 16px;
   font-family: 'Poiret One', cursive;
@@ -625,7 +627,11 @@ h3.yoman {
 
 }
 
-
+.glyphicon-envelope
+ {
+  padding-right: 10px;
+  padding-left: 10px;
+}
 
 
   @media (max-width: 750px) {

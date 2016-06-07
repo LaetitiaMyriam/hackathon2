@@ -15,4 +15,7 @@ app.controller('artworkCtrl', ['$scope', 'artworksService', '$stateParams', 'aut
     $scope.body = '';
   };
 
+  // $scope.mailLink = "mailto:" + $scope.emailId + "?subject=" + $scope.Subject + '&body=' + $scope.bodyText;
+  // $scope.mailLink = "mailto:" + $scope.currentUsermail + "?subject=" + $scope.Subject + '&body=' + $scope.bodyText;
+
 }]);
