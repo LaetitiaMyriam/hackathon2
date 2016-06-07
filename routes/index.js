@@ -58,7 +58,6 @@ router.post('/login', function(req, res, next){
 
 
 router.post('/users', function(req, res, next) {
-
   var artwork = new Artwork(req.body.artwork);
   
   User.findById(req.body.id, function (err, data){
