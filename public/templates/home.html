@@ -4,7 +4,7 @@
   <div class="artwork-container" ng-repeat="artwork in artworks">
       
           <div class="artwork-image-container">
-            <a ui-sref="artworkpage({artId: artwork.id})">
+            <a ui-sref="artworkpage({artId: artwork._id})">
               <img class="artwork-image" ng-click="showFilePage(artwork)" ng-src="{{artwork.url}}"  alt="film image"/>
             </a>
             <div class="artwork-name">{{artwork.username | uppercase}}</div>

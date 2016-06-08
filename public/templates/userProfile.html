@@ -23,7 +23,7 @@
   <script>
      //cloud name for everything
      cloudinary.setCloudName('tlvart');
-
+     console.log('hiii');
 
      //creates widget frame on click of button
      cloudinary.applyUploadWidget(document.getElementById('opener2'), 
@@ -38,8 +38,9 @@
 
          var token = localStorage['final-project'];
          var userId = JSON.parse(atob(token.split('.')[1]))._id;
+         var username = JSON.parse(atob(token.split('.')[1])).username;
  
-         var obj = {userId: userId, urls: urls}
+         var obj = {username: username, userId: userId, urls: urls}
          $.post('/addurls', obj);
     });
 

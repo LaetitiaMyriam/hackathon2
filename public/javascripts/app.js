@@ -45,15 +45,13 @@ app.config(['$stateProvider','$urlRouterProvider', function($stateProvider, $url
     .state('artworkpage', {
       url: '/artworkpage/:artId',
       templateUrl: '/templates/artworkPage.html',
-      controller: 'artworkCtrl'
-      // resolve: {
-      //   usersPromise: ['artwork', function(artwork){
-      //     return artworkCtrl.showFilePage2();
-      //   }]
-      // }
+      controller: 'artworkCtrl',
+      resolve: {
+        usersPromise: ['users', function(users){
+          return users.getAll();
+        }]
+      }
     })
-
-
    
 
   // $urlRouterProvider.otherwise('home');

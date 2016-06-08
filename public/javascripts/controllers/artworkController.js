@@ -1,6 +1,7 @@
 app.controller('artworkCtrl', ['$scope', 'artworksService', '$stateParams', 'auth', function ($scope, artworksService, $stateParams, auth) {
     $scope.artwork = artworksService.getArtworkById($stateParams.artId);
 
+
     $scope.good = function () {
       if ($scope.artwork.comments === '') {
         return true;

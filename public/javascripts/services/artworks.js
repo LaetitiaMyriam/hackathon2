@@ -1,15 +1,17 @@
 app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, users) {
-    var artworks = [];
+  var artworks = [];
 
-  var randomizeArtworks = function () {
-    
+
+  var randomizeArtworks = function () {    
     artworks = [];
 
-    for ( var i = 0; i < users.users.length; i ++ ){
-      for (var j = 0; j < users.users[i].artworks.length; j ++ ){
+    for ( var i = 0; i < users.users.length; i++){
+      for (var j = 0; j < users.users[i].artworks.length; j++){
         artworks.push(users.users[i].artworks[j]);
       }
     }
+
+
 
     function shuffle(array) {
       var currentIndex = array.length, temporaryValue, randomIndex;
@@ -26,17 +28,19 @@ app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, 
         array[randomIndex] = temporaryValue;
       }
     }
-
     shuffle(artworks);
-  }
+  };
 
 
   var getArtworkById = function(id) {
-
-    for(var i = 0; i < artworks.length; ++i) {
-      if (artworks[i].id == id)
-        return artworks[i];
-    } return null;
+    console.log('printing the id that coming from the stateParam', id);
+    for ( var i = 0; i < users.users.length; i++) {
+      for (var j = 0; j < users.users[i].artworks.length; j++) {
+        if (users.users[i].artworks[j]._id === id) {  
+          return users.users[i].artworks[j];
+        } 
+      };
+    };
   };
 
 

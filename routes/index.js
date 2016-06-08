@@ -81,7 +81,7 @@ router.post('/addurls', function(req, res){
     
     if ((typeof urls) == 'object'){
       for ( var i = 0; i < urls.length; i++) {
-            var artwork = new Artwork({userId: req.body.userId, url: urls[i]});
+            var artwork = new Artwork({username: req.body.username, userId: req.body.userId, url: urls[i]});
             user.artworks.push(artwork);
       };     
     } else {
@@ -98,7 +98,6 @@ router.post('/users/comments', function(req, res, next) {
   User.findById(req.body.userId, function (err, data) {
 
     
-
     for (var i = 0; i < data.artworks.length; i++) {
 
       if (data.artworks[i]._id == req.body.artId) {
