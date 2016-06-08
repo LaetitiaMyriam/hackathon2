@@ -51,18 +51,25 @@ app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, 
 
 
   var addUpvotes = function (artwork) {
-      artwork.upvotes += 1;
+
+      obj = {
+        userId: artwork.userId,
+        artId: artwork._id,
+        likes: artwork.likes
+      }
+
+      return $http.put('/artworks/comments', obj);
     };
 
-
-
   var addComment = function(id, userId, comment) {
+
 
     obj = {
       userId: userId,
       artId: id,
       comment: comment
     };
+
 
       return $http.post('/users/comments', obj);
     };

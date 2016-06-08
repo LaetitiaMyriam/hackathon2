@@ -93,30 +93,62 @@ router.post('/addurls', function(req, res){
 });
 
 
-
+//comments
 router.post('/users/comments', function(req, res, next) { 
+
   User.findById(req.body.userId, function (err, data) {
 
-    
+    var comment = null;
+
     for (var i = 0; i < data.artworks.length; i++) {
+    
 
       if (data.artworks[i]._id == req.body.artId) {
-        console.log(data.artworks[i]);
+  
+        comment = new Comment(req.body.comment); 
         
-        var comment = new Comment(req.body.comment);
-        console.log(comment);
-        data.artworks[i].comments.push(comment);
+        var artwork = data.artworks[i];
+        artwork.comments.push(comment);
+
+        data.artworks.set(i, artwork);
+        
+        data.save();
 
       };
+
     };
 
+    res.json(comment);    
     
-    console.log(data.artworks);
-    data.save(function (err) {
-      console.log(err)
-    });
   });
+
+    console.log("exit post");
+
   });
+
+
+
+router.put('/artworks/comments', function(req, res, next) {
+ User.findById(req.body.userId, function (err, data) {
+
+     for (var i = 0; i < data.artworks.length; i++) {
+       if (data.artworks[i]._id == req.body.artId) {
+ 
+
+        var artwork = data.artworks[i];
+         data.artworks[i].likes += 1;
+         data.artworks.set(i, artwork);
+         data.save();
+         console.log(data.artworks[i]);
+
+       };
+     };
+         res.end();
+
+
+   });
+});
+
 
 
 module.exports = router;

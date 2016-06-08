@@ -13,21 +13,51 @@
 
 
 <div class="lightbox-leftside-list">
+
+
+
   <form ng-submit="addComment()">
       <div id="form-control-comments-head">
         <h3>Add a new comment</h3>
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Comment" ng-model="body"></input>
         </div>
+
+        <!-- here is the post button -->
         <button type="submit" class="btn btn-primary">Post</button>
+
+        <!-- here we will post all comments -->
+        <div ng-repeat="comment in artwork.comments.slice().reverse()" >
+          <div>
+            <div>
+              {{comment.author}}:
+            </div>
+            <div>
+              {{comment.body}}
+            </div>
+            </div>
+        </div>
+
+
       </div>
+
+
+
   </form>
 
 
   <div ng-show="good()" class="lightbox-comments" ng-repeat="comment in artwork.comments">
-    <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
 
-     {{comment.upvotes}}  {{comment.author}}: 
+
+
+    <!-- upvote -->
+    <!-- <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(comment)"></span>
+
+
+
+
+
+     {{comment.upvotes}}  {{comment.author}}: --> 
 
     <span class="comment-body">{{comment.body}}</span>
   </div>
@@ -35,7 +65,16 @@
 
   <ul class="lightbox-rightside-list">
     <li class="lightbox-likes">
-      <span class="lightbox-likes-count"><i class="glyphicon glyphicon-hand-right" ng-click="incrementUpvotes(artwork)"></i>{{artwork.upvotes}}</span>
+
+
+
+
+      <span  class="lightbox-likes-count"><i class="glyphicon glyphicon-hand-right" ng-click="incrementUpvotes(artwork)"></i>{{artwork.likes}}</span>
+    
+
+
+
+
     </li>
     <li class="lightbox-views">
       <img>
