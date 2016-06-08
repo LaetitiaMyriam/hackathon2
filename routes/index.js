@@ -95,45 +95,57 @@ router.post('/addurls', function(req, res){
 
 //comments
 router.post('/users/comments', function(req, res, next) { 
+
   User.findById(req.body.userId, function (err, data) {
 
+    var comment = null;
+
     for (var i = 0; i < data.artworks.length; i++) {
-    console.log('here');
+    
 
       if (data.artworks[i]._id == req.body.artId) {
+  
+        comment = new Comment(req.body.comment); 
+        
+        var artwork = data.artworks[i];
+        artwork.comments.push(comment);
 
-        console.log('hello');
+        data.artworks.set(i, artwork);
         
-        var comment = new Comment(req.body.comment);
-        
-        console.log('beforeCommentPush', data.artworks[i].comments);
-        data.artworks[i].comments.push(comment);
-        console.log('afterCommentPush', data.artworks[i].comments);
+        data.save();
 
       };
+
     };
 
+    res.json(comment);    
     
-    
-    data.save();
   });
+
+    console.log("exit post");
+
   });
 
 
-//upvotes
-router.put('/artwork/likes', function(req, res, next) {
+
+router.put('/artworks/comments', function(req, res, next) {
  User.findById(req.body.userId, function (err, data) {
+
      for (var i = 0; i < data.artworks.length; i++) {
-       if (data.artworks[i]._id == req.body._id) {
+       if (data.artworks[i]._id == req.body.artId) {
+ 
+
+        var artwork = data.artworks[i];
          data.artworks[i].likes += 1;
-         console.log(data.artworks[i].likes);
-         data.save(function(err, data) {
-           console.log(data);
-           res.end();
-         });
-       }
-     }
-     
+         data.artworks.set(i, artwork);
+         data.save();
+         console.log(data.artworks[i]);
+
+       };
+     };
+         res.end();
+
+
    });
 });
 
