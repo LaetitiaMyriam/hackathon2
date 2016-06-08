@@ -1,20 +1,18 @@
+<div class="lightbox-big-container">  
+    <section class="user-profile-wrapper">
 
-<div class="lightbox-big-container">
-  <div class="lightbox-user">
-    <div class="lightbox-user-pic"></div>
-    <div>
-        <h3 class="yoman" ng-show="currentUser">Welcome {{ currentUser.username }}</h3>
-    </div>
-    <p class="lightbox-user-name">{{artwork.username}}</p>
-  </div>
-  <div class="lightbox-page">
-    <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
-    <div class="lightbox-nav">
-     {{artwork.artworkname}}
-    </div>
-  </div>
+            <div class="lightbox-user">
+              <div class="lightbox-user-pic"></div>
+            <div>
+            <h3 class="yoman" ng-show="currentUser">Welcome {{ currentUser.username | uppercase}}</h3>
+            <div class="user-profile-page">
 
+                  <img class="artwork-image" ng-repeat="artwork in artworks" ng-watch ng-src="{{artwork.url}}" /> 
+     
+            </div>
 
+    </section>
+</div>
 
 
   <div id="opener2"></div>
@@ -23,7 +21,6 @@
   <script>
      //cloud name for everything
      cloudinary.setCloudName('tlvart');
-     console.log('hiii');
 
      //creates widget frame on click of button
      cloudinary.applyUploadWidget(document.getElementById('opener2'), 

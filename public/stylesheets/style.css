@@ -642,42 +642,20 @@ h3.yoman {
   padding-left: 50px;
   }
 
- /* display: block;
-  float: left;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-bottom: 26px;*/
-/*  max-height: 250px;
-  max-width: 250px; */
 
-/*.artwork-item{
-  width: 100%;
-  }*/
 .artwork-image-container {
   width: 100%;
   display: block;
   max-height: 250px;
   max-width: 250px; 
   }
+
 .artwork-image {
   width: 100%;
   float: center;
   }
 
-/*
-.lightbox-page {
-  width: 100%;
-  display: block;
-  }
-.lightbox-user {
-  width: 100%;
-  display: block;
- 
-  }
-.lightbox-user-pic {
-  width: 100%;
-  display: block;
-  }*/
+
 .lightbox-big-container {
   width: 100%;
   position: relative;
@@ -688,22 +666,6 @@ h3.yoman {
   border-radius: 6px; 
   
   }
-/*.lightbox-image-main {
-  width: 100%;
-  display: block;*/
-/*  max-height: 250px;
-  max-width: 250px; 
-/*  }
-.lightbox-leftside-list {
-  width: 100%;
-  display: block;
-  float: left;
-  }
-.lightbox-rightside-list{
-  width: 100%;
-  display: block;
-  float: right;
-}*/
 
 .row:before {
   display: table;
@@ -725,9 +687,7 @@ h3.yoman {
   .artwork-container{ 
   width: 100%;
   }
-/*.artwork-item{
-   width: 100%;
-  }*/
+
   .artwork-image-container {
   width: 100%;
   }
@@ -735,27 +695,29 @@ h3.yoman {
   width: 100%;
   }
 
-  /*.lightbox-page {
-  width: 100%;
-  }
-  .lightbox-user {
-  width: 100%;
-  }
-  .lightbox-user-pic {
-  width: 100%;
-  }
-  .lightbox-big-container {
-  width: 100%;
-  }
-  .lightbox-image-main {
-  width: 100%;
-  }
-  .lightbox-leftside-list {
-  width: 100%;
-  }
-  .lightbox-rightside-list{
-   width: 100%;
-  }*/
-/*.lightbox-comments {
-  }*/
+
+
+/*USER PROFILE PAGE*/
+
+.user-profile-page {
+    font-family: 'Poiret One', cursive;
+    font-size: 20px;
+    max-width: 800px;
+    max-height: 600px;
+    margin: 0 0 30px 0;
+    padding: 20px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
+}
+
+.user-profile-image-main {
+  margin-top: 0.5%;
+  margin-right: 0.5%;
+  margin-left: 0.5%;
+  margin-bottom: 0.5%;
+  float: left;
+  width: 99%;
+
 }

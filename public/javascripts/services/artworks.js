@@ -33,7 +33,6 @@ app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, 
 
 
   var getArtworkById = function(id) {
-    console.log('printing the id that coming from the stateParam', id);
     for ( var i = 0; i < users.users.length; i++) {
       for (var j = 0; j < users.users[i].artworks.length; j++) {
         if (users.users[i].artworks[j]._id === id) {  
@@ -54,7 +53,6 @@ app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, 
   var addUpvotes = function (artwork) {
       artwork.upvotes += 1;
     };
-
 
 
 
