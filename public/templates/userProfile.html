@@ -7,6 +7,7 @@
             <h3 class="yoman" ng-show="currentUser">Welcome {{ currentUser.username | uppercase}}</h3>
             <div class="user-profile-page">
 
+
 <div class="lightbox-big-container">
   <div class="lightbox-user">
     <div class="lightbox-user-pic"></div>
@@ -16,7 +17,9 @@
     <p class="lightbox-user-name">{{artwork.username}}</p>
   </div>
   <div class="lightbox-page">
-    <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
+    
+     <img class="lightbox-image-main" ng-src="{{artwork.url}}" />    
+     
     <div class="lightbox-nav">
 
      
@@ -24,15 +27,21 @@
 
 
      <div ng-repeat="artwork in artworks">
-      <img src="{{currentUser.artworks.url}}">
+      
+        <img src="{{currentUser.artworks.url}}">
+    
      </div>
 
 
+<div id="opener2"></div>
 
     </div>
   </div>
+            
+                <section class="profile-images">
+                  <img class="artwork-image profile-image" ng-repeat="artwork in artworks" ng-watch ng-src="{{artwork.url}}" /> 
+                </section>
 
-                  <img class="artwork-image" ng-repeat="artwork in artworks" ng-watch ng-src="{{artwork.url}}" /> 
      
             </div>
 
@@ -42,12 +51,12 @@
 
 
 
-  <div id="opener2"></div>
 
 
   <script>
      //cloud name for everything
      cloudinary.setCloudName('tlvart');
+  
 
      //creates widget frame on click of button
      cloudinary.applyUploadWidget(document.getElementById('opener2'), 
@@ -55,17 +64,24 @@
        stylesheet: 'li.camera{display: none} li.url{display: none} li.local{display: none} #cloudinary-navbar{height: 0px; border-color: none; border-bottom-width: 0px; border-bottom-style: 0px; border: 0px solid white;} #cloudinary-widget{height: 452px}', upload_preset: 'sgygqy8w'}, 
      function(error, result) {        
         var urls = [];
+        console.log('height', result[0].height);
+                console.log('width', result[0].width);
+
 
         for ( var i = 0; i < result.length; i ++ ){
          urls.push(result[i].secure_url);
          }
 
          var token = localStorage['final-project'];
+
          var userId = JSON.parse(atob(token.split('.')[1]))._id;
          var username = JSON.parse(atob(token.split('.')[1])).username;
  
          var obj = {username: username, userId: userId, urls: urls}
          $.post('/addurls', obj);
+         
+         location.reload(true);
+         
     });
 
 

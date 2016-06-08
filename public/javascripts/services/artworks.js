@@ -121,6 +121,7 @@ app.factory('artworksService', ['$http', 'auth', 'users', function($http, auth, 
 //       upvotes: 8
 //     }, {
 //       id : "1",
+          // type: 1,
 //       userId: "575",
 //       username: "Eugenie Berger",
 //       artworkname: "ARTWORKNAME22",

@@ -67,14 +67,22 @@ h3 {
 font-family: 'Open Sans';
 }
 
+.profile-images{
+  max-width: 100%;
+
+
+}
+.profile-image{
+  max-width: 25%;
+  margin: 5px;
+  
+}
+
 .site-name{
   font-family: 'Open Sans';
   text-align: center;
   margin-bottom: 20px;
 }
-
-
-
 
 
 /*Messing with the error styles in upload file
@@ -694,12 +702,7 @@ h3.yoman {
   width: 100%;
   }
 
-  .artwork-image-container {
-  width: 100%;
-  }
-  .artwork-image {
-  width: 100%;
-  }
+
 
 
 
@@ -725,5 +728,8 @@ h3.yoman {
   margin-bottom: 0.5%;
   float: left;
   width: 99%;
+
+}
+
 
 }
