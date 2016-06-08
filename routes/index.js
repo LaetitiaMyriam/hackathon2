@@ -93,30 +93,50 @@ router.post('/addurls', function(req, res){
 });
 
 
-
+//comments
 router.post('/users/comments', function(req, res, next) { 
   User.findById(req.body.userId, function (err, data) {
 
-    
     for (var i = 0; i < data.artworks.length; i++) {
+    console.log('here');
 
       if (data.artworks[i]._id == req.body.artId) {
-        console.log(data.artworks[i]);
+
+        console.log('hello');
         
         var comment = new Comment(req.body.comment);
-        console.log(comment);
+        
+        console.log('beforeCommentPush', data.artworks[i].comments);
         data.artworks[i].comments.push(comment);
+        console.log('afterCommentPush', data.artworks[i].comments);
 
       };
     };
 
     
-    console.log(data.artworks);
-    data.save(function (err) {
-      console.log(err)
-    });
+    
+    data.save();
   });
   });
+
+
+//upvotes
+router.put('/artwork/likes', function(req, res, next) {
+ User.findById(req.body.userId, function (err, data) {
+     for (var i = 0; i < data.artworks.length; i++) {
+       if (data.artworks[i]._id == req.body._id) {
+         data.artworks[i].likes += 1;
+         console.log(data.artworks[i].likes);
+         data.save(function(err, data) {
+           console.log(data);
+           res.end();
+         });
+       }
+     }
+     
+   });
+});
+
 
 
 module.exports = router;

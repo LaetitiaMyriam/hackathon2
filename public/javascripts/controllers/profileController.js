@@ -1,7 +1,8 @@
 app.controller('UserProfCtrl', ['$scope', 'artworksService', 'auth', 'users', function ($scope, artworksService, auth, users) {
   $scope.arrUsers = users.users;
-
+ 
   $scope.artworks = [];
+  // console.log('thisUsrArtworks', $sc);
   // console.log('userprofileUsers', $scope.arrUsers);
   // console.log('userprofileCurrentUser', auth.currentUser());
   

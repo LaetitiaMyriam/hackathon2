@@ -10,9 +10,21 @@
   <div class="lightbox-page">
     <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
     <div class="lightbox-nav">
-     {{artwork.artworkname}}
+
+     
+
+
+
+     <div ng-repeat="artwork in artworks">
+      <img src="{{currentUser.artworks.url}}">
+     </div>
+
+
+
     </div>
   </div>
+
+
 
 
 
@@ -23,7 +35,6 @@
   <script>
      //cloud name for everything
      cloudinary.setCloudName('tlvart');
-     console.log('hiii');
 
      //creates widget frame on click of button
      cloudinary.applyUploadWidget(document.getElementById('opener2'), 
