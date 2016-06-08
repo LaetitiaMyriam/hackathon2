@@ -79,20 +79,19 @@ router.post('/addurls', function(req, res){
     var user = data;
     var urls = req.body['urls[]'];
     
-    if ((typeof urls) == 'string'){
-      var artwork = new Artwork({userId: req.body.userId, url: urls});
-      user.artworks.push(artwork);    
-    };
-
     if ((typeof urls) == 'object'){
       for ( var i = 0; i < urls.length; i++) {
             var artwork = new Artwork({userId: req.body.userId, url: urls[i]});
             user.artworks.push(artwork);
-      };
-      user.save();
-    };    
+      };     
+    } else {
+      var artwork = new Artwork({userId: req.body.userId, url: urls});
+      user.artworks.push(artwork);    
+    };
+    user.save();    
   });
 });
+
 
 
 router.post('/users/comments', function(req, res, next) { 
@@ -106,11 +105,17 @@ router.post('/users/comments', function(req, res, next) {
         console.log(data.artworks[i]);
         
         var comment = new Comment(req.body.comment);
-        data.artworks[i].comments.push(comment) 
-      }
-    }
+        console.log(comment);
+        data.artworks[i].comments.push(comment);
+
+      };
+    };
+
+    
     console.log(data.artworks);
-    data.save();
+    data.save(function (err) {
+      console.log(err)
+    });
   });
   });
 

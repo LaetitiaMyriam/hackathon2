@@ -20,7 +20,7 @@ app.controller('artworkCtrl', ['$scope', 'artworksService', '$stateParams', 'aut
 
     artworksService.addComment($scope.artwork.id, $scope.artwork.userId, {
       body: $scope.body,
-      author: auth.currentUser().username,
+      author: auth.currentUser().username
     }).success(function(comment) {
       $scope.artwork.comments.push(comment);
     });
