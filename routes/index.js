@@ -9,6 +9,7 @@ require('../config/passport');
 
 var User = require('../models/Users');
 var Artwork = require('../models/Artworks');
+var Comment = require('../models/Comments');
 
 
 router.get('/users', function(req, res, next) {
@@ -40,6 +41,7 @@ router.post('/register', function(req, res, next){
   });
 });
 
+
 router.post('/login', function(req, res, next){
   if(!req.body.username || !req.body.password){
     return res.status(400).json({message: 'Please fill out all fields'});
@@ -57,6 +59,7 @@ router.post('/login', function(req, res, next){
 });
 
 
+
 router.post('/users', function(req, res, next) {
   var artwork = new Artwork(req.body.artwork);
   
@@ -67,45 +70,85 @@ router.post('/users', function(req, res, next) {
 
     res.json(data);
   });
-  
-})
+});
+
 
 router.post('/addurls', function(req, res){
-
   User.findById(req.body.userId, function (err, data){
 
     var user = data;
     var urls = req.body['urls[]'];
     
-    if ((typeof urls) == 'string'){
-
-      var artwork = new Artwork({userId: req.body.userId, url: urls});
-      user.artworks.push(artwork);
-      
-    };
-
     if ((typeof urls) == 'object'){
       for ( var i = 0; i < urls.length; i++) {
-
-            var artwork = new Artwork({userId: req.body.userId, url: urls[i]});
+            var artwork = new Artwork({username: req.body.username, userId: req.body.userId, url: urls[i]});
             user.artworks.push(artwork);
-      };
-      user.save();
-    };    
+      };     
+    } else {
+      var artwork = new Artwork({userId: req.body.userId, url: urls});
+      user.artworks.push(artwork);    
+    };
+    user.save();    
+  });
 });
 
+
+//comments
+router.post('/users/comments', function(req, res, next) { 
+
+  User.findById(req.body.userId, function (err, data) {
+
+    var comment = null;
+
+    for (var i = 0; i < data.artworks.length; i++) {
+    
+
+      if (data.artworks[i]._id == req.body.artId) {
   
+        comment = new Comment(req.body.comment); 
+        
+        var artwork = data.artworks[i];
+        artwork.comments.push(comment);
 
-  // var arr = req.body['urls[]'];
+        data.artworks.set(i, artwork);
+        
+        data.save();
 
-  // for ( var j = 0; j < arr.length; j++) {
-  //   var artwork = new Artwork({userId: req.body.userId, url: arr[j]};
+      };
 
-  //   var artwork = undefined;
-  // };
+    };
 
-  
-})
+    res.json(comment);    
+    
+  });
+
+    console.log("exit post");
+
+  });
+
+
+
+router.put('/artworks/comments', function(req, res, next) {
+ User.findById(req.body.userId, function (err, data) {
+
+     for (var i = 0; i < data.artworks.length; i++) {
+       if (data.artworks[i]._id == req.body.artId) {
+ 
+
+        var artwork = data.artworks[i];
+         data.artworks[i].likes += 1;
+         data.artworks.set(i, artwork);
+         data.save();
+         console.log(data.artworks[i]);
+
+       };
+     };
+         res.end();
+
+
+   });
+});
+
 
 
 module.exports = router;

@@ -1,3 +1,11 @@
+<div class="lightbox-big-container">  
+    <section class="user-profile-wrapper">
+
+            <div class="lightbox-user">
+              <div class="lightbox-user-pic"></div>
+            <div>
+            <h3 class="yoman" ng-show="currentUser">Welcome {{ currentUser.username | uppercase}}</h3>
+            <div class="user-profile-page">
 
 <div class="lightbox-big-container">
   <div class="lightbox-user">
@@ -10,9 +18,26 @@
   <div class="lightbox-page">
     <img class="lightbox-image-main" ng-src="{{artwork.url}}" />      
     <div class="lightbox-nav">
-     {{artwork.artworkname}}
+
+     
+
+
+
+     <div ng-repeat="artwork in artworks">
+      <img src="{{currentUser.artworks.url}}">
+     </div>
+
+
+
     </div>
   </div>
+
+                  <img class="artwork-image" ng-repeat="artwork in artworks" ng-watch ng-src="{{artwork.url}}" /> 
+     
+            </div>
+
+    </section>
+</div>
 
 
 
@@ -23,7 +48,6 @@
   <script>
      //cloud name for everything
      cloudinary.setCloudName('tlvart');
-
 
      //creates widget frame on click of button
      cloudinary.applyUploadWidget(document.getElementById('opener2'), 
@@ -36,18 +60,12 @@
          urls.push(result[i].secure_url);
          }
 
-
-         //FIND CURRENT USER ID
          var token = localStorage['final-project'];
          var userId = JSON.parse(atob(token.split('.')[1]))._id;
-         // // console.log(userId);
-         // console.log(typeof userId);
-         //JQUERY POST REQUEST
-         var obj = {userId: userId, urls: urls}
+         var username = JSON.parse(atob(token.split('.')[1])).username;
+ 
+         var obj = {username: username, userId: userId, urls: urls}
          $.post('/addurls', obj);
-
-         //CLEAR URLS ARRAY
-         //urls = [];
     });
 
 
