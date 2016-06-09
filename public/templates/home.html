@@ -1,19 +1,26 @@
 
 
 <section class="big-art-wrapper"> 
-  <div class="artwork-container" ng-repeat="artwork in artworks">
+  <div class="home-img-wrap" ng-repeat="artwork in artworks">
       
-          <div class="artwork-image-container">
-            <a ui-sref="artworkpage({artId: artwork._id})">
-              <img class="artwork-image" ng-click="showFilePage(artwork)" ng-src="{{artwork.url}}"  alt="film image"/>
-            </a>
-            <div class="artwork-name">{{artwork.username | uppercase}}</div>
-          </div>      
+      <div class="thumbnail">
 
-          <div class="glyphicon">
-              <span class="glyphicon glyphicon-comment">{{artwork.comments.length}}</span>
-              <span class="glyphicon glyphicon-thumbs-up">{{artwork.upvotes}}</span>
+            <a ui-sref="artworkpage({artId: artwork._id})">
+              <img class="thumbnail-image" ng-click="showFilePage(artwork)" ng-src="{{artwork.url}}"  alt="film image"/>
+            </a>  
+
+      </div>   
+
+          <div class="glyphicon home-page-info">
+              <div class="artwork-name">{{artwork.username | uppercase}}</div>
+              <div>
+              <span class="glyphicon glyphicon-comment"> {{artwork.comments.length}}</span>
+
+              </div>
+              
+              <span class="glyphicon glyphicon-thumbs-up"> {{artwork.likes}}</span>
           </div>         
+      
 
   </div>
 </section>

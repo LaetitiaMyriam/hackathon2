@@ -68,7 +68,7 @@ font-family: 'Open Sans';
 }
 
 .profile-images{
-  max-width: 100%;
+  /*max-width: 100%;*/
 
 
 }
@@ -114,6 +114,7 @@ font-family: 'Open Sans';
   padding-left: 10px;
   padding-right: 10px;
   margin-bottom: 26px;
+  overflow: hidden;
 }
 
 .artwork-image-container{ 
@@ -133,13 +134,28 @@ font-family: 'Open Sans';
   }
 
  .artwork-name{
-  padding-top: 6px;
+  padding-top: 2px;
+  padding-bottom: 4px;
  } 
 
 .glyphicon {
   display: inline;
   width: 33.33%;
   
+}
+
+.glyphicon-comment {
+    float: left;
+    width: 10px;
+     margin-left: 2px; 
+    margin-right: -2px;
+}
+
+.glyphicon-thumbs-up {
+    float: left;
+    width: 10px;
+     margin-left: 2px; 
+    margin-right: -2px;
 }
 
 
@@ -733,3 +749,42 @@ h3.yoman {
 
 
 }
+
+
+.thumbnail {
+  position: relative;
+  display: block;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 7px 7px 2px #888888;
+  border: 1px solid black;
+  box-sizing: border-box;
+  margin-bottom: 5px;
+}
+
+.thumbnail-image {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+     -ms-transform: translate(-50%,-50%);
+         transform: translate(-50%,-50%);
+
+}
+
+.home-page-info {
+  display: block;
+  position: relative;
+}
+
+.home-img-wrap {
+  padding: 20px;
+
+  overflow: hidden;
+  float: left;
+  width: 25%;
+}
+
